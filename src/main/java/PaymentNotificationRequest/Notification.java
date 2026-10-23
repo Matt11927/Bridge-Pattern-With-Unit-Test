@@ -1,4 +1,5 @@
 package PaymentNotificationRequest;
 
-public class Notification {
+public interface Notification {
+    public String getPaymentNotification(String message);
 }
