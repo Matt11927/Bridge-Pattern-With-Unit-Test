@@ -45,5 +45,23 @@ public class TestPayment {
         assertEquals(expected,actual);
     }
 
+    @Test
+    public void TestCashPaymentViaSms(){
+        Notification sms = new SmsChannel();
+        Payment cashPayment = new CashPayment(sms);
+        String actual = cashPayment.processPayment();
+        String expected = "To complete your payment prepare cash upon delivery, you will receive a confirmation text message soon";
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void TestCashPaymentViaPush(){
+        Notification push = new PushChannel();
+        Payment cashPayment = new CashPayment(push);
+        String actual = cashPayment.processPayment();
+        String expected = "To complete your payment prepare cash upon delivery, Your order has been Confirmed";
+        assertEquals(expected,actual);
+    }
+
 
 }
