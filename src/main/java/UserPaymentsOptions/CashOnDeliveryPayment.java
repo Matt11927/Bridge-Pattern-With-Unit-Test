@@ -2,9 +2,9 @@ package UserPaymentsOptions;
 
 import PaymentNotificationRequest.Notification;
 
-public class CashPayment extends Payment {
+public class CashOnDeliveryPayment extends Payment {
 
-    public CashPayment(Notification channel){
+    public CashOnDeliveryPayment(Notification channel){
         super(channel);
     }
 

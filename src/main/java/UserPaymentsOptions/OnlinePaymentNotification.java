@@ -2,15 +2,15 @@ package UserPaymentsOptions;
 
 import PaymentNotificationRequest.Notification;
 
-public class OnlinePayment extends Payment{
+public class OnlinePaymentNotification extends Payment{
 
-    public OnlinePayment(Notification channel) {
+    public OnlinePaymentNotification(Notification channel) {
         super(channel);
     }
 
     @Override
     public String processPayment() {
-        String paymentMessage = "Your online payment has been processed, ";
+        String paymentMessage = "Your credit card or PayPal payment was successful, ";
         return notification.sendNotification(paymentMessage);
     }
 }
