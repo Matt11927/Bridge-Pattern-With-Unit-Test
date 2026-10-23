@@ -4,6 +4,6 @@ public class SmsChannel implements Notification{
 
     @Override
     public String sendNotification(String message) {
-        return null;
+        return message + "you will receive a test message soon";
     }
 }
