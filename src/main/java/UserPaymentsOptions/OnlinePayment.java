@@ -10,7 +10,7 @@ public class OnlinePayment extends Payment{
 
     @Override
     public String processPayment() {
-        String paymentMessage = "Your online payment has been processed.";
+        String paymentMessage = "Your online payment has been processed, ";
         return notification.sendNotification(paymentMessage);
     }
 }
