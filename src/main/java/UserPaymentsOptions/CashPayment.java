@@ -11,6 +11,6 @@ public class CashPayment extends Payment {
     @Override
     public String processPayment() {
         String paymentMessage = "To complete your payment prepare cash upon delivery, ";
-        return null;
+        return notification.sendNotification(paymentMessage);
     }
 }
