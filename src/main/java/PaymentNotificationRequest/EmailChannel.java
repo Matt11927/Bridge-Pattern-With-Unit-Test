@@ -4,6 +4,6 @@ public class EmailChannel implements Notification{
 
     @Override
     public String sendNotification(String message) {
-        return null;
+        return message + "Confirmation has been to your email ";
     }
 }
