@@ -15,7 +15,7 @@ public class TestPaymentNotification {
         Notification email = new EmailChannel();
         Payment onlinePayment = new OnlinePaymentNotification(email);
         String actual = onlinePayment.processPayment();
-        String expected = "Your credit card or PayPal payment was successful, Confirmation has been to your email";
+        String expected = "Your credit card or PayPal payment was successful, Confirmation has been sent to your email";
         assertEquals(expected,actual);
     }
     @Test
@@ -41,7 +41,7 @@ public class TestPaymentNotification {
         Notification email = new EmailChannel();
         Payment cashPayment = new CashOnDeliveryPayment(email);
         String actual = cashPayment.processPayment();
-        String expected = "To complete your payment prepare cash upon delivery, Confirmation has been to your email";
+        String expected = "To complete your payment prepare cash upon delivery, Confirmation has been sent to your email";
         assertEquals(expected,actual);
     }
 
