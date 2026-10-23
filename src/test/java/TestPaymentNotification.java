@@ -73,4 +73,22 @@ public class TestPaymentNotification {
         assertEquals(expected,actual);
     }
 
+    @Test
+    public void TestBitCoinPaymentViaSms(){
+        Notification sms = new SmsChannel();
+        Payment bitCoinPayment = new BitcoinPayment(sms);
+        String actual = bitCoinPayment.processPayment();
+        String expected = "Bit coin payment received, you will receive a confirmation text message soon";
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void TestBitCoinPaymentViaPush(){
+        Notification push = new PushChannel();
+        Payment bitCoinPayment = new BitcoinPayment(push);
+        String actual = bitCoinPayment.processPayment();
+        String expected = "Bit coin payment received, Your order has been Confirmed";
+        assertEquals(expected,actual);
+    }
+
 }
