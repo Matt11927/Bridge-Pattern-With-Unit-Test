@@ -2,6 +2,7 @@ import PaymentNotificationRequest.EmailChannel;
 import PaymentNotificationRequest.Notification;
 import PaymentNotificationRequest.PushChannel;
 import PaymentNotificationRequest.SmsChannel;
+import UserPaymentsOptions.BitcoinPayment;
 import UserPaymentsOptions.CashOnDeliveryPayment;
 import UserPaymentsOptions.OnlinePaymentNotification;
 import UserPaymentsOptions.Payment;
@@ -63,5 +64,13 @@ public class TestPaymentNotification {
         assertEquals(expected,actual);
     }
 
+    @Test
+    public void TestBitCoinPaymentViaEmail(){
+        Notification email = new EmailChannel();
+        Payment bitCoinPayment = new BitcoinPayment(email);
+        String actual = bitCoinPayment.processPayment();
+        String expected = "Bit coin payment received, Confirmation has been sent to your email";
+        assertEquals(expected,actual);
+    }
 
 }
