@@ -1,4 +1,9 @@
 package PaymentNotificationRequest;
 
-public class SmsChannel {
+public class SmsChannel implements Notification{
+
+    @Override
+    public String getPaymentNotification() {
+        return null;
+    }
 }
