@@ -13,6 +13,6 @@ public class BitcoinPayment extends Payment{
     @Override
     public String processPayment() {
         String paymentMessage = "Bit coin payment received, ";
-        return null;
+        return notification.sendNotification(paymentMessage);
     }
 }
