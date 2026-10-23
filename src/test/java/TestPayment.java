@@ -1,5 +1,6 @@
 import PaymentNotificationRequest.EmailChannel;
 import PaymentNotificationRequest.Notification;
+import PaymentNotificationRequest.PushChannel;
 import PaymentNotificationRequest.SmsChannel;
 import UserPaymentsOptions.OnlinePayment;
 import UserPaymentsOptions.Payment;
@@ -21,7 +22,16 @@ public class TestPayment {
         Notification sms = new SmsChannel();
         Payment onlinePayment = new OnlinePayment(sms);
         String actual = onlinePayment.processPayment();
-        String expected = "Your online payment has been processed, you will receive a test message soon";
+        String expected = "Your online payment has been processed, you will receive a confirmation text message soon";
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void TestOnlinePaymentViaPush() {
+        Notification push = new PushChannel();
+        Payment onlinePayment = new OnlinePayment(push);
+        String actual = onlinePayment.processPayment();
+        String expected = "Your online payment has been processed, Your order has been Confirmed";
         assertEquals(expected,actual);
     }
 
