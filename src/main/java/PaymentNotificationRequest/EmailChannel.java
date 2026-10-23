@@ -4,6 +4,6 @@ public class EmailChannel implements Notification{
 
     @Override
     public String getPaymentNotification(String message) {
-        return null;
+        return "Your Payment Confirmation has been sent via email";
     }
 }
