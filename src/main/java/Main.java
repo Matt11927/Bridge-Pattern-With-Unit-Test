@@ -50,5 +50,17 @@ public class Main {
         System.out.println("Customer 6 Decided pay with bit coin and get an text: ");
         System.out.println(processedBitCoinSmsPayment + "\n");
 
+
+        Payment cashPushPayment = new CashOnDeliveryPayment(push);
+        String processedCashPushPayment = cashPushPayment.processPayment();
+        System.out.println("Customer 7 Decided pay with cash and get an push notification: ");
+        System.out.println(processedCashPushPayment + "\n");
+
+
+        Payment bitCoinPushPayment = new BitcoinPayment(push);
+        String processedBitCoinPushPayment = bitCoinPushPayment.processPayment();
+        System.out.println("Customer 8 Decided pay with bit coin and get an push notification: ");
+        System.out.println(processedBitCoinPushPayment + "\n");
+
     }
 }

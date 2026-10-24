@@ -33,7 +33,7 @@ public class TestPaymentNotification {
         Notification push = new PushChannel();
         Payment onlinePayment = new OnlinePaymentNotification(push);
         String actual = onlinePayment.processPayment();
-        String expected = "Your credit card or PayPal payment was successful, Your order has been Confirmed";
+        String expected = "Your credit card or PayPal payment was successful, Push Notification Confirmed";
         assertEquals(expected,actual);
     }
 
@@ -60,7 +60,7 @@ public class TestPaymentNotification {
         Notification push = new PushChannel();
         Payment cashPayment = new CashOnDeliveryPayment(push);
         String actual = cashPayment.processPayment();
-        String expected = "To complete your payment prepare cash upon delivery, Your order has been Confirmed";
+        String expected = "To complete your payment prepare cash upon delivery, Push Notification Confirmed";
         assertEquals(expected,actual);
     }
 
@@ -87,7 +87,7 @@ public class TestPaymentNotification {
         Notification push = new PushChannel();
         Payment bitCoinPayment = new BitcoinPayment(push);
         String actual = bitCoinPayment.processPayment();
-        String expected = "Bit coin payment received, Your order has been Confirmed";
+        String expected = "Bit coin payment received, Push Notification Confirmed";
         assertEquals(expected,actual);
     }
 
